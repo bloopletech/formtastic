@@ -119,7 +119,7 @@ module Formtastic #:nodoc:
 
       list_item_content = input_parts.map do |type|
         send(:"inline_#{type}_for", method, options)
-      end.compact.join("\n") + template.content_tag(:br, '', :class => 'clear')
+      end.compact.join("\n")
 
       return template.content_tag(:li, Formtastic::Util.html_safe(list_item_content), wrapper_html)
     end
@@ -1347,7 +1347,7 @@ module Formtastic #:nodoc:
 
         legend  = html_options.delete(:name).to_s
         legend %= parent_child_index(html_options[:parent]) if html_options[:parent]
-        legend  = template.content_tag(:legend, template.content_tag(:span, Formtastic::Util.html_safe(legend))) unless legend.blank?
+        legend  = template.content_tag(:legend, template.content_tag(:label, Formtastic::Util.html_safe(legend)), :class => 'label') unless legend.blank?
 
         if block_given?
           contents = if template.respond_to?(:is_haml?) && template.is_haml?

@@ -21,10 +21,6 @@ form.formtastic input, form.formtastic textarea, form.formtastic select { font-f
 form.formtastic input, form.formtastic textarea, form.formtastic select { font-size:100%; }
 form.formtastic legend { white-space:normal; color:#000; }
 
-/* CLEARING
----------*/
-form.formtastic br.clear { clear: both; height: 0; line-height: 0; }
-
 
 /* SEMANTIC ERRORS
 --------------------------------------------------------------------------------------------------*/
@@ -43,7 +39,7 @@ form.formtastic fieldset.buttons li { float:left; padding-right:0.5em; }
 /* INPUT LIs
 --------------------------------------------------------------------------------------------------*/
 form.formtastic fieldset > ol > li { padding:0.5em 0; margin-top:-0.5em; margin-bottom:1em; } /* padding and negative margin juggling is for Firefox */
-form.formtastic fieldset > ol > li { clear: both; } /* clearing contained floats */
+form.formtastic > fieldset > ol > li { } /* clearing contained floats */
 
 form.formtastic fieldset > ol > li.required { }
 form.formtastic fieldset > ol > li.optional { }
