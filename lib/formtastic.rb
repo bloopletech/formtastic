@@ -119,7 +119,7 @@ module Formtastic #:nodoc:
 
       list_item_content = input_parts.map do |type|
         send(:"inline_#{type}_for", method, options)
-      end.compact.join("\n")
+      end.compact.join("\n") + template.content_tag(:br, '', :class => 'clear')
 
       return template.content_tag(:li, Formtastic::Util.html_safe(list_item_content), wrapper_html)
     end
